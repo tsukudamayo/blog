@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "blog/**"
 
 env:
   SERVICE_NAME: ${{ secrets.SERVICE_NAME }}
