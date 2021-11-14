@@ -7,7 +7,6 @@ RUN apt-get update \
     && apt-get install -y git \
     curl \
     yarn \
-    && 
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /workspace
@@ -15,6 +14,8 @@ WORKDIR /workspace
 RUN git clone https://github.com/tsukudamayo/blog.git
 
 WORKDIR /workspace/blog/blog
+
+RUN npm install
 
 EXPOSE 8080
 
