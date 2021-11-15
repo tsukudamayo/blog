@@ -33,3 +33,13 @@ jobs:
 
       - name: Push the docker image to Container Registry
         run: docker push $IMAGE
+
+      - name: Deploy to Cloud Run
+        run: |
+          gcloud run deploy $SERVICE_NAME \
+            --image  $IMAGE \
+            --project $PROJECT \
+            --region $GCP_PROJECT_ID \
+            --platform=managed \
+            --allow-unauthenticated \
+            --quiet
