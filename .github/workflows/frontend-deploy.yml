@@ -38,8 +38,8 @@ jobs:
         run: |
           gcloud run deploy $SERVICE_NAME \
             --image  $IMAGE \
-            --project $PROJECT \
-            --region $GCP_PROJECT_ID \
+            --project $GCP_PROJECT_ID \
+            --region $GCP_REGION \
             --platform=managed \
             --allow-unauthenticated \
             --quiet
